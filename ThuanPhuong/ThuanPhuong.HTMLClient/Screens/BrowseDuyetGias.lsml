@@ -102,6 +102,10 @@
                   Kind="Value"
                   DataType=":Boolean"
                   View="Microsoft.LightSwitch.MobileWeb:FlipSwitchControl">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Duyệt" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -118,19 +122,12 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <CallExpression
-                        Target="!module/Methods[showAddEditDuyetGia]">
-                        <CallExpression.Attributes>
-                          <AssociatedCollection
-                            Collection="BrowseDuyetGias/Properties[DuyetGias]" />
-                        </CallExpression.Attributes>
+                        Target="BrowseDuyetGias/Methods[showDialog]">
                         <ArgumentExpression
-                          Parameter="DuyetGia">
-                          <ChainExpression>
-                            <MemberExpression
-                              Member="BrowseDuyetGias/Properties[DuyetGias]" />
-                            <MemberExpression
-                              Member="selectedItem" />
-                          </ChainExpression>
+                          Parameter="dialogName">
+                          <ConstantExpression
+                            Value="Group"
+                            ResultType=":String" />
                         </ArgumentExpression>
                       </CallExpression>
                     </ChainExpression>
@@ -182,7 +179,115 @@
         <ContentItem
           Name="Popups"
           Kind="Group"
-          View="Microsoft.LightSwitch.MobileWeb:DialogPages" />
+          View="Microsoft.LightSwitch.MobileWeb:DialogPages">
+          <ContentItem
+            Name="Group"
+            Kind="Group">
+            <ContentItem
+              Name="DuyetGias_selectedItem"
+              Kind="Details"
+              DataType="DuyetGia">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="BrowseDuyetGias/Properties[DuyetGias]" />
+                    <MemberExpression
+                      Member="selectedItem" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="MaHang1"
+                Kind="Value"
+                DataType=":Int32">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Mã hàng" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="DuyetGia/Properties[MaHang]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="MaPO1"
+                Kind="Value"
+                DataType=":Int32">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Mã PO" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="DuyetGia/Properties[MaPO]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Duyet1"
+                Kind="Value"
+                DataType=":Boolean">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Duyệt" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="DuyetGia/Properties[Duyet]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="DienGiai1"
+                Kind="Value"
+                DataType=":String">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Diễn giải" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="DuyetGia/Properties[DienGiai]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Group1"
+                Kind="Group"
+                View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
+                <ContentItem
+                  Name="ĐÓNG"
+                  Kind="Command">
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <CallExpression
+                            Target="BrowseDuyetGias/Methods[ĐÓNG]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+              </ContentItem>
+            </ContentItem>
+          </ContentItem>
+        </ContentItem>
       </ContentItem>
     </Screen.RootContentItem>
     <Screen.Methods>
@@ -210,6 +315,8 @@
       </ScreenMethod>
       <ScreenMethod
         Name="Lưu" />
+      <ScreenMethod
+        Name="ĐÓNG" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty

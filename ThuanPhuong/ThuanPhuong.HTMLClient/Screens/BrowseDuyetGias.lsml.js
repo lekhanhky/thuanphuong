@@ -35,3 +35,8 @@ myapp.BrowseDuyetGias.Lưu_postRender = function (element, contentItem) {
     // Write code here.
     $(element).addClass("double-size-button");
 };
+
+myapp.BrowseDuyetGias.ĐÓNG_execute = function (screen) {
+    // Write code here.
+    screen.closePopup();
+};

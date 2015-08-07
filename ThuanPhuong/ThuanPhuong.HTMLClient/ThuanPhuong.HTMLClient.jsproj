@@ -93,6 +93,9 @@
     <Content Include="Content\Images\user-splash-screen.png" />
     <Content Include="Content\Web.config" />
     <Content Include="packages.config" />
+    <Content Include="Screens\AddEditDuyetGia.lsml.js">
+      <DependentUpon>AddEditDuyetGia.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\BieuDoTonKhoesChart.lsml.js">
       <DependentUpon>BieuDoTonKhoesChart.lsml</DependentUpon>
     </Content>
