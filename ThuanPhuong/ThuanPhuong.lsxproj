@@ -141,15 +141,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <LightSwitchExtension Include="Extensions\C1D3.LightSwitch.lspkg">
-      <ExtensionId>C1D3.LightSwitch</ExtensionId>
-    </LightSwitchExtension>
-    <LightSwitchExtension Include="Extensions\Wijmo.LightSwitch.lspkg">
-      <ExtensionId>Wijmo.LightSwitch</ExtensionId>
-      <Server>WIJMO.LIGHTSWITCH.COMMON;WIJMO.LIGHTSWITCH.SERVER</Server>
-    </LightSwitchExtension>
-  </ItemGroup>
-  <ItemGroup>
     <PublishParameter Include="DuyetGiaData">
       <Value>workstation id=TPDatabase.mssql.somee.com;packet size=4096;user id=dvdonline009_SQLLogin_1;pwd=hl1fv3cu9l;data source=TPDatabase.mssql.somee.com;persist security info=False;initial catalog=TPDatabase</Value>
     </PublishParameter>
@@ -163,6 +154,15 @@
       <Install>True</Install>
       <Name>Microsoft.Windows.Installer.4.5</Name>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <LightSwitchExtension Include="Extensions\C1D3.LightSwitch.lspkg">
+      <ExtensionId>C1D3.LightSwitch</ExtensionId>
+    </LightSwitchExtension>
+    <LightSwitchExtension Include="Extensions\Wijmo.LightSwitch.lspkg">
+      <ExtensionId>Wijmo.LightSwitch</ExtensionId>
+      <Server>WIJMO.LIGHTSWITCH.COMMON;WIJMO.LIGHTSWITCH.SERVER</Server>
+    </LightSwitchExtension>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\LightSwitch\$(LightSwitchVersion)\Microsoft.LightSwitch.targets" />
 </Project>

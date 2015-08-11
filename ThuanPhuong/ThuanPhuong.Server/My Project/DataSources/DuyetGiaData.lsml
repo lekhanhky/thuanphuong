@@ -5,7 +5,8 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityContainer
-    Name="DuyetGiaData">
+    Name="DuyetGiaData"
+    DataProvider="EntityFrameworkDataProvider">
     <EntityContainer.Attributes>
       <Partial
         IsPrimary="True" />
@@ -15,7 +16,6 @@
   </EntityContainer>
   <DataService
     Name="DuyetGiaDataDataService"
-    DataProvider="EntityFrameworkDataProvider"
     EntityContainer="DuyetGiaData">
     <DataService.Attributes>
       <Partial
