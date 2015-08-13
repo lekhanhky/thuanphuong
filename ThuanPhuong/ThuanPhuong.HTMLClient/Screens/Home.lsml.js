@@ -12,6 +12,7 @@ myapp.Home.ScreenContent_render = function (element, contentItem) {
     var divClass = "msls-presenter msls-list-child msls-ctl-group-custom-control msls-vauto msls-hstretch msls-compact-padding msls-presenter-content msls-hscroll";
     var border = "border-left-width:1px; border-right-width:1px; border-top-width:1px; border-bottom-width:1px;";
     var width = "width:254px;";
+    
 
     var items = [];
     var excluded = ["Screen", "AddEditDuyetGia","ViewBaoCao","ViewDuyetGia"];

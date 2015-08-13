@@ -7,9 +7,11 @@ myapp.BrowseDuyetGias.RowTemplate_postRender = function (element, contentItem) {
     //If IsAvailable is false then the color of List row would be red
     function refresh() {
         var color = "#F5858B";
+        element.childNodes.item(3).textContent = "Chưa duyệt"
         //var color = "#85F5B4";
         if (entity.Duyet) {
             color = "#85F5B4";
+           element.childNodes.item(3).textContent = "Đã duyệt"
         }
         $(element).closest("li").css("background", color);
     }
@@ -40,3 +42,4 @@ myapp.BrowseDuyetGias.ĐÓNG_execute = function (screen) {
     // Write code here.
     screen.closePopup();
 };
+

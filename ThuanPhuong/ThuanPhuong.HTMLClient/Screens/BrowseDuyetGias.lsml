@@ -101,7 +101,7 @@
                   Name="Duyet"
                   Kind="Value"
                   DataType=":Boolean"
-                  View="Microsoft.LightSwitch.MobileWeb:FlipSwitchControl">
+                  View="Microsoft.LightSwitch.MobileWeb:Text">
                   <ContentItem.Attributes>
                     <DisplayName
                       Value="Duyệt" />
